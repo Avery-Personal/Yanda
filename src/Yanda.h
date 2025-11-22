@@ -29,6 +29,8 @@
     extern "C" {
 #endif
 
+#include "../include/Yanda_event.h"
+
 typedef struct YANDA_Window YANDA_Window;
 
 void YANDA_Initialize(void);
@@ -37,7 +39,7 @@ void YANDA_Shutdown(void);
 YANDA_Window *YANDA_CreateWindow(const char *Name, int WIDTH, int HEIGHT);
 void YANDA_DestroyWindow(YANDA_Window *WINDOW);
 
-int YANDA_IsWindowOpen(YANDA_Window *WINDOW);
+int YANDA_ShouldClose(YANDA_Window *WINDOW);
 
 #ifdef __cplusplus
 }

@@ -1,6 +1,6 @@
 # Yanda
 
-**Version:** 0.0.1
+**Version:** 0.1.2
 **License:** MIT
 **Copyright © 2025 ASUKA Development Team**
 
@@ -33,6 +33,16 @@ void YANDA_DestroyWindow(YANDA_Window *WINDOW);
 
 > `YANDA_CreateWindow` >> Returns a handle with a newly created window.
 > `YANDA_DestroyWindow` >> Frees all memory and resources associated with a window.
+
+### Window Updates
+
+Window update events on Yanda, are created under the Yanda_event.h, for specified needs. 
+
+```C
+Uhh.. 1 day and I'll get back atcha?
+```
+
+## Input System
 
 ## Note(s)
 

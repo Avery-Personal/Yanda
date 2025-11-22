@@ -10,11 +10,13 @@ LAST MODIFIED: 25/11/21 | International Date Format
 ===========================================================
                       TEST PURPOSE
 
-This test is to mark & benchmark the first stage of Yanda.
-It's to test top-level functions with the Yanda.h header.
+This test is to mark & benchmark the second stage of Yanda.
+It's to test top-level functions & specified modules with
+the Yanda.h, Yanda_input.h, and Yanda_event.h header.
 
 If working correctly, the program should open an empty
-black window with a command prompt to the side.
+black window with a command prompt to the side. All inputs
+will be registered and printed onto the cmd prompt.
 
 ===========================================================
                    LICENSE INFORMATION
@@ -26,19 +28,40 @@ file AND OR the end of the file.
 ===========================================================
 */
 
+#include <stdio.h>
+
 #include "../src/Yanda.h"
+#include "../include/Yanda_event.h"
+#include "../include/Yanda_input.h"
 
 int main() {
     YANDA_Initialize();
 
-    YANDA_Window *WINDOW = YANDA_CreateWindow("Window Testing", 800, 600);
+    YANDA_Window* WINDOW = YANDA_CreateWindow("Input Testing", 800, 600);
 
     while (!YANDA_ShouldClose(WINDOW)) {
-        continue;
+        YANDA_Event EVENT;
+
+        while (YANDA_PollEvent(&EVENT)) {
+            YANDA__InputProcessEvent(&EVENT);
+
+            switch (EVENT.Type) {
+                case YANDA_EVENT_KEY_DOWN:
+                    printf("Key: %d\n", EVENT.Key.Keycode);
+
+                    break;
+
+                case YANDA_EVENT_MOUSE_MOVE:
+                    printf("Mouse: %d %d\n", EVENT.MouseMove.x, EVENT.MouseMove.y);
+
+                    break;
+            }
+        }
     }
 
-    YANDA_DestroyWindow(WINDOW);
     YANDA_Shutdown();
+
+    return 0;
 }
 
 /*
