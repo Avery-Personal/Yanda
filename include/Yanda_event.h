@@ -1,3 +1,30 @@
+/*
+ * ASUKA COSA Unified System Library | YANDA COSWA Windowing Library
+ * Copyright (c) 2025 ASUKA Development Team
+ *
+ * Component: Yanda_event.h (Extenstion Header File)
+ * Module Type: Core Utility / System Header EXTENSION
+ * Version: 1.0.0
+ * 
+ * Licensed under the MIT License.
+ * 
+ * See the LICENSE file for full terms.
+*/
+
+/*
+
+    * Description:
+    *   This file is the created for the uhhhh, i forgot ngl. It serves for detecting a change in input, or when you recieve one, different from input that checks while something is true/happening, instead of when it does happen.
+    *
+    *   Events - Do something when something changes
+    *   Input - Check every frame for an input and do something when it is true/happening.
+    * 
+    * Created: 2025-11-21
+    * Last Modified: 2025-11-21
+
+*/
+
+
 #ifndef YANDA_EVENT_H
 #define YANDA_EVENT_H
 

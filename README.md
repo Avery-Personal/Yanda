@@ -17,8 +17,8 @@ void YANDA_Initialize();
 void YANDA_Shutdown();
 ```
 
-> `YANDA_Initialize` >> Sets up the engine with memory, etc, as previously stated.
-> `YANDA_Shutdown` >> Cleans all engine resources used, recommended to prevent errors.
+> - `YANDA_Initialize` >> Sets up the engine with memory, etc, as previously stated.
+> - `YANDA_Shutdown` >> Cleans all engine resources used, recommended to prevent errors.
 
 ## Window Management
 
@@ -39,8 +39,12 @@ void YANDA_DestroyWindow(YANDA_Window *WINDOW);
 Window update events on Yanda, are created under the Yanda_event.h, for specified needs. 
 
 ```C
-Uhh.. 1 day and I'll get back atcha?
+YANDA_Window *YANDA_WindowPollEvents(YANDA_Window *window);
+YANDA_Window *YANDA_WindowSwapBuffers(YANDA_Window *window);
 ```
+
+> `YANDA_WindowPollEvents` >> Processes input and OS-level window messages.
+> `YANDA_WindowSwapBuffers` >> Swaps the front and back buffers for double-buffered rendering.
 
 ## Input System
 

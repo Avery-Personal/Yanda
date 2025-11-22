@@ -26,6 +26,8 @@ file AND OR the end of the file.
 ===========================================================
 */
 
+#include <stdio.h>
+
 #include "../src/Yanda.h"
 
 int main() {

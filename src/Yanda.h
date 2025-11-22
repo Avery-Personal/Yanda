@@ -4,7 +4,7 @@
  *
  * Component: Yanda.h (Primary Header File)
  * Module Type: Core Utility / System Header
- * Version: 1.0.0
+ * Version: 1.0.4
  * 
  * Licensed under the MIT License.
  * 
@@ -39,7 +39,17 @@ void YANDA_Shutdown(void);
 YANDA_Window *YANDA_CreateWindow(const char *Name, int WIDTH, int HEIGHT);
 void YANDA_DestroyWindow(YANDA_Window *WINDOW);
 
+// All loop types!!
 int YANDA_ShouldClose(YANDA_Window *WINDOW);
+int YANDA_Update(YANDA_Window *WINDOW);
+
+void YANDA_Run(YANDA_Window *WINDOW, void (*Callback)(void)) {
+    while (YANDA_Update(WINDOW)) {
+        Callback();
+    }
+}
+
+#define YANDA_MainLoop(WINDOW) while (YANDA_Update(WINDOW));
 
 #ifdef __cplusplus
 }

@@ -1,3 +1,27 @@
+/*
+ * ASUKA COSA Unified System Library | YANDA COSWA Windowing Library
+ * Copyright (c) 2025 ASUKA Development Team
+ *
+ * Component: Yanda_input.c (Primary Header Ext File)
+ * Module Type: Core Utility / System Header EXTENSION
+ * Version: 1.0.0
+ * 
+ * Licensed under the MIT License.
+ * 
+ * See the LICENSE file for full terms.
+*/
+
+/*
+
+    * Description:
+    *   This file is the created for the main Yanda_input.h header to declare the function(s)/initialized content that Yanda inputs use.
+    *
+    * Created: 2025-11-21
+    * Last Modified: 2025-11-21
+
+*/
+
+
 #include "../../include/Yanda_input.h"
 
 #define KEY_MAX 512
