@@ -26,17 +26,16 @@ file AND OR the end of the file.
 ===========================================================
 */
 
-#include <stdio.h>
-
 #include "../src/Yanda.h"
+#include "../include/Yanda_event.h"
 
 int main() {
     YANDA_Initialize();
 
     YANDA_Window *WINDOW = YANDA_CreateWindow("Window Testing", 800, 600);
 
-    while (!YANDA_ShouldClose(WINDOW)) {
-        continue;
+    while (YANDA_Update(WINDOW)) {
+        
     }
 
     YANDA_DestroyWindow(WINDOW);

@@ -36,20 +36,20 @@ typedef struct YANDA_Window YANDA_Window;
 void YANDA_Initialize(void);
 void YANDA_Shutdown(void);
 
+// Windowing specific
+
 YANDA_Window *YANDA_CreateWindow(const char *Name, int WIDTH, int HEIGHT);
 void YANDA_DestroyWindow(YANDA_Window *WINDOW);
 
-// All loop types!!
 int YANDA_ShouldClose(YANDA_Window *WINDOW);
 int YANDA_Update(YANDA_Window *WINDOW);
-
-void YANDA_Run(YANDA_Window *WINDOW, void (*Callback)(void)) {
-    while (YANDA_Update(WINDOW)) {
-        Callback();
-    }
-}
+void YANDA_Run(YANDA_Window *WINDOW, void (*Callback)(void));
 
 #define YANDA_MainLoop(WINDOW) while (YANDA_Update(WINDOW));
+
+int YANDA_GetWindowWidth(YANDA_Window *WINDOW);
+int YANDA_GetWindowHeight(YANDA_Window *WINDOW);
+int YANDA_GetWindowSize(YANDA_Window *WINDOW);
 
 #ifdef __cplusplus
 }

@@ -27,9 +27,23 @@
 
 #include <SDL3/SDL.h>
 
+typedef struct {
+    int Width;
+    int Height;
+
+    int Resizable;
+    int Fullscreen;
+    int Visible;
+} YANDA_WindowSettings;
+
 struct YANDA_Window {
     SDL_Window *SDL_WINDOW;
+    
     int ShouldClose;
+    
+    YANDA_WindowSettings Settings;
+
+    void *Renderer;
 };
 
 #endif

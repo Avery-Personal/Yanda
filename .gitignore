@@ -1,3 +1,7 @@
 build/
 DOCUMENTATION/
+renderers/
+src/renderer/
 .vscode/
+tests/
+Makefile
